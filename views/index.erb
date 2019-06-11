@@ -2,14 +2,7 @@
   <head>
 	  <style>
 		  body {
-				background: white;
-				<% if message == "You got it right!" %>
-				  background: green;
-				<% elsif message == "Way too high!" || message == "Way too low!" %>
-				  background: red;
-				<% elsif message == "Too high!" || message = "Too low!" %>
-				  background: pink;
-				<% end %>
+				background-color: <%= background %>
 			}
 		</style>
 	</head>
@@ -18,9 +11,10 @@
 		  <input type='text' name='guess' />
 			<input type='submit' value='Guess!' />
 		</form>
-    <p>
-		  <%= message %>
-		</p>
+		<p> Attempts remaining: <%= count %></p>
+    <p><%= message %></p>
+		<p><%= result %></p>
+		<p><%= cheat %></p>
 		<% if number == params['guess'].to_i %>
 			<p>
 				The SECRET NUMBER is <%= number %>
