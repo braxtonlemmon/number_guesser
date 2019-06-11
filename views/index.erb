@@ -1,5 +1,18 @@
 <html>
-  <head></head>
+  <head>
+	  <style>
+		  body {
+				background: white;
+				<% if message == "You got it right!" %>
+				  background: green;
+				<% elsif message == "Way too high!" || message == "Way too low!" %>
+				  background: red;
+				<% elsif message == "Too high!" || message = "Too low!" %>
+				  background: pink;
+				<% end %>
+			}
+		</style>
+	</head>
 	<body>
 		<form>
 		  <input type='text' name='guess' />
